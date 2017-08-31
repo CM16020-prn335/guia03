@@ -91,10 +91,31 @@ public class UtilitiesTest {
     
     @Test
     public void testcontarCoincidencias1() {
+        String texto = "Bienvenidos a la materiade Programación 3 Ciclo II 2017";
+        String frase = "2017";
+        int esperado= 1;
+        int resultado = metodos.contarCoincidencias(texto,frase);
+        assertEquals(esperado, resultado);
+        
+    }
+    
+    @Test
+    public void testcontarCoincidencias2() {
+        String texto = "Bienvenidos a la materiade Programación 3 Ciclo II 2017";
+        String frase = "MA";
+        int esperado= 2;
+        int resultado = metodos.contarCoincidencias(texto,frase);
+        assertEquals(esperado, resultado);
+        
+    }
+    
+    @Test
+    public void testcontarCoincidencias3() {
         String texto = null;
-        String textEsperado = null;
-        String resultado = metodos.capitalizar(texto);
-        assertEquals(textEsperado, resultado);
+        String frase = "bienvenido";
+        int esperado= 0;
+        int resultado = metodos.contarCoincidencias(texto,frase);
+        assertEquals(esperado, resultado);
         
     }
     

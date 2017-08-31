@@ -72,16 +72,28 @@ public class Utilities implements Serializable{
       * @param texto
       * @return int coincidencias
       */
-     public int contarCoincidencias(String frase, String texto){
-         int coincidencia=0, posicion=0;
-         
-         posicion=texto.indexOf(frase);
-         while (posicion != -1) {
-            coincidencia++;
-            posicion=texto.indexOf(frase, posicion+1 );
-            
-             
-         }
-         return coincidencia;
-     }
+     
+    public int contarCoincidencias(String texto,String frase) {
+        int coincidencias = 0, lev = 0, case1, case2;
+        if (texto != null) {
+            String search;
+            if (frase.length() < texto.length()) {
+                for (case1 = frase.length(); case1 <= texto.length(); case1++, lev++) {
+                    search = "";
+                    for (case2 = 0 + lev; case2 < frase.length() + lev; case2++) {
+                        search += String.valueOf(texto.charAt(case2));
+                    }
+                    if (frase.equalsIgnoreCase(search)) {
+                        coincidencias++;
+                    }
+                }
+
+            } else {
+                coincidencias = 0;
+            }
+            return coincidencias;
+        } else {
+            return 0;
+        }
+   }
 }
