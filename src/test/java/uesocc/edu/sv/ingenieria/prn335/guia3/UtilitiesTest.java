@@ -89,6 +89,15 @@ public class UtilitiesTest {
         
     }
     
+    @Test
+    public void testcontarCoincidencias1() {
+        String texto = null;
+        String textEsperado = null;
+        String resultado = metodos.capitalizar(texto);
+        assertEquals(textEsperado, resultado);
+        
+    }
+    
     
 
     

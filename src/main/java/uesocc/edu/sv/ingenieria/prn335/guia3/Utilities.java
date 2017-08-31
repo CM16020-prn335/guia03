@@ -44,19 +44,26 @@ public class Utilities implements Serializable{
             for (int i = 0; i < texto.length(); i++) {
                 if (i==0) {
                     resultado+=texto.toUpperCase().charAt(i);
+                    
                   }else if(texto.charAt(i)!=' '){
-                      if (texto.charAt(i-1)==' ') {
+                      if (texto.charAt(i-1)==' ' && texto.charAt(i-3)==' ') {
+                          
+                          resultado+=texto.toUpperCase().charAt(i);
                           i++;
-                     }
+                      }else if(texto.charAt(i-1)==' '){
+                          i++;
+                      }
                         resultado+=texto.charAt(i);
                  }else{
                          if (texto.charAt(i+1)==' ') {
-                            }else{
+                             
+                             }else{
                              resultado+=" "+texto.toUpperCase().charAt(i+1);
+                            }
                       }
                  }
               }
-         } 
+         
          return resultado;
      }
      /**
