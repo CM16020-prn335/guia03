@@ -15,9 +15,19 @@ public class Utilities implements Serializable{
      */
      public String getResume(String texto){
         String resultado="";
-        for (int i = 0; i < 20; i++) {
-            resultado=resultado+texto.charAt(i);
-        }
+         if (texto==null) {
+             resultado=null;
+         }else{
+            if (texto.length()<20) {
+                for (int i = 0; i < texto.length(); i++) {
+               resultado=resultado+texto.charAt(i);
+               }
+            }else{
+            for (int i = 0; i < 20; i++) {
+               resultado=resultado+texto.charAt(i);
+               }
+            }
+         }
         return resultado;
     }
      /**
@@ -26,23 +36,27 @@ public class Utilities implements Serializable{
       * @return String texto
       */
      public String capitalizar(String texto){
-         String resultado=" ";
-         for (int i = 0; i < texto.length(); i++) {
-             if (i==0) {
-                 resultado+=texto.toUpperCase().charAt(i);
-               }else if(texto.charAt(i)!=' '){
-                   if (texto.charAt(i-1)==' ') {
-                       i++;
-                  }
-                     resultado+=texto.charAt(i);
-              }else{
-                      if (texto.charAt(i+1)==' ') {
-                         }else{
-                          resultado+=" "+texto.toUpperCase().charAt(i+1);
-                   }
+         String resultado="";
+         if (texto == null) {
+             resultado=null;
+         }else{
+            texto=texto.toLowerCase();
+            for (int i = 0; i < texto.length(); i++) {
+                if (i==0) {
+                    resultado+=texto.toUpperCase().charAt(i);
+                  }else if(texto.charAt(i)!=' '){
+                      if (texto.charAt(i-1)==' ') {
+                          i++;
+                     }
+                        resultado+=texto.charAt(i);
+                 }else{
+                         if (texto.charAt(i+1)==' ') {
+                            }else{
+                             resultado+=" "+texto.toUpperCase().charAt(i+1);
+                      }
+                 }
               }
-         }
-          
+         } 
          return resultado;
      }
      /**

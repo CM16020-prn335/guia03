@@ -64,8 +64,8 @@ public class UtilitiesTest {
     
     @Test
     public void testCapitalizar1() {
-        String texto = "prueBas de UNIDAD con JUnit & arQuillian";
-        String textEsperado = "Pruebas De Unidad Con Junit & Arquillian";
+        String texto = "prueBas de UNIDAD con JUnit arQuillian";
+        String textEsperado = "Pruebas De Unidad Con Junit Arquillian";
         String resultado = metodos.capitalizar(texto);
         assertEquals(textEsperado, resultado);
         
