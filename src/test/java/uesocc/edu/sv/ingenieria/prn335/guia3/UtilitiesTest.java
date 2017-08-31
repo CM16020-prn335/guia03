@@ -37,7 +37,7 @@ public class UtilitiesTest {
      
     @Test
     public void testgetResume1() {
-        String texto = "Bienvenidos a la materiade Programacion 3 Ciclo II 2017";
+        String texto = "Bienvenidos a la materiade Programación 3 Ciclo II 2017";
         String textEsperado = "Bienvenidos a la mat";
         String resultado = metodos.getResume(texto);
         assertEquals(textEsperado, resultado);
@@ -64,8 +64,8 @@ public class UtilitiesTest {
     
     @Test
     public void testCapitalizar1() {
-        String texto = "prueBas de UNIDAD con JUnit arQuillian";
-        String textEsperado = "Pruebas De Unidad Con Junit Arquillian";
+        String texto = "prueBas de UNIDAD con JUnit & arQuillian";
+        String textEsperado = "Pruebas De Unidad Con Junit & Arquillian";
         String resultado = metodos.capitalizar(texto);
         assertEquals(textEsperado, resultado);
         
@@ -88,6 +88,8 @@ public class UtilitiesTest {
         assertEquals(textEsperado, resultado);
         
     }
+    
+    
 
     
     
