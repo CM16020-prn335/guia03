@@ -11,7 +11,7 @@ public class Utilities implements Serializable{
     /**
      * El metodo getResume recive una cadena de texto y devuelve los primeros 20 caracteres de esta.
      * @param texto
-     * @return Devuelve un String de 20 caracteres
+     * @return Devuelve un String de 20 caracteres o menos dependiendo del caso
      */
      public String getResume(String texto){
         String resultado="";
@@ -31,9 +31,9 @@ public class Utilities implements Serializable{
         return resultado;
     }
      /**
-      * El metodo recive una cadena de texto y capitaliza cada palabra de dicha cadena.
+      * El metodo recive una cadena de texto y capitaliza cada palabra de dicha cadena ademas de cambiar espacios dobles o mayores por un solo espacio.
       * @param texto
-      * @return String texto
+      * @return String texto con palabras correctamente capitalizadas y con espacios simples
       */
      public String capitalizar(String texto){
          String resultado="";
@@ -70,7 +70,7 @@ public class Utilities implements Serializable{
       * El metodo cuenta el numero de coincidencia de palabras entre la frase y el texto
       * @param frase
       * @param texto
-      * @return int coincidencias
+      * @return devuelve un entero con el numero de coincidencias encontradas
       */
      
     public int contarCoincidencias(String texto,String frase) {
